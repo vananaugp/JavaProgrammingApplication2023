@@ -1,5 +1,5 @@
 
-
+//06
 public class PokemonGame {
     public static void main(String[] args) {
         Pokemon squirtle = new Pokemon("꼬부기", 1);
