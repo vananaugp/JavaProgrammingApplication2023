@@ -1,4 +1,4 @@
-package version14;
+
 
 public interface Flyable {
 //    public Flyable(){
