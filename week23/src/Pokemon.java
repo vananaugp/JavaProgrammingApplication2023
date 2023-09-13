@@ -1,4 +1,4 @@
-package version04;
+
 
 public class Pokemon {
     // fields, 멤버 변수, 속성
