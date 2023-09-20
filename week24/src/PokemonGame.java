@@ -10,16 +10,17 @@ public class PokemonGame {
 
 
         // 적군 포켓몬스터 랜덤 생성
+        Pokemon enemy = null;
         int enenmyPick = (int)(Math.random()*3);
         if(enenmyPick == 0) {
             NoFly noFly = new NoFly();
-            Pikachu pikachu = new Pikachu(noFly);
+             enemy = new Pikachu(noFly);
         } else if (enenmyPick == 1) {
             NoFly noFly = new NoFly();
-            Squirtle squirtle = new Squirtle(noFly);
+             enemy = new Squirtle(noFly);
         } else if (enenmyPick == 2) {
             Wings wings = new Wings();
-            Charizard charizard = new Charizard(wings);
+             enemy = new Charizard(wings);
         } else  {
             System.out.println("여기는 영원히 실행 안됩니다.");
         }
@@ -27,16 +28,18 @@ public class PokemonGame {
 
 
         // 플레이어 포켓몬 선택
+        // Pokemon player = new Pokemon(); // 추상클래스의 객체는 생성 불가
+        Pokemon player = null; // 추상클래스 변수 선언은 가능 (upcasting 용)
         Scanner scanner = new Scanner(System.in);
         System.out.print("포켓몬을 고르세요.\n1) 피카츄    2) 꼬부기    2) 리자몽 : ");
         int pokemonPick = scanner.nextInt();
 
         if(pokemonPick == 1){
-            Pikachu p1 = new Pikachu(new NoFly());
+             player = new Pikachu(new NoFly());
         } else if (pokemonPick == 2) {
-            Squirtle p2 = new Squirtle(new NoFly());
+             player = new Squirtle(new NoFly());
         } else if (pokemonPick == 3) {
-            Charizard p3 = new Charizard(new NoFly());
+             player = new Charizard(new NoFly());
         } else {
             System.out.println("정상적인 값이 아닙니다");
         }
@@ -47,14 +50,34 @@ public class PokemonGame {
             System.out.print("\t1) 전투   2) 도망   3) 종료 : ");
             menu = scanner.nextInt();
             if(menu == 1) {
-
+                player.attack(enemy);
             } else if (menu == 2) {
 
             } else {
                 System.out.println("게임을 종료합니다.");
+
+
+
+
+
+
                 break;
             }
         }
 
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+// Is - a (상속관계) - Inheritance
+// Has - a (연관관계) - Composition, Aggregation
+// Use - a (의존관계) - Dependency
