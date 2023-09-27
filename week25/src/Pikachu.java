@@ -1,18 +1,17 @@
-
-
 public class Pikachu extends Pokemon{
     public Pikachu(Flyable f) {
-        System.out.println("피카피카");
+        System.out.println("피카피카!");
         this.level = 1;
+        this.attackRate = 55;
         this.setHp(35);
         this.name = "피카츄";
-        this.attackRate = 55;
-        //this.flyable = new NoFly(); // Association, Has-a (Composition)
+        this.defenceRate = 30;
+        //this.flyable = new NoFly();  // Association, Has-a (Composition)
         this.flyable = f;
     }
 
     @Override
-    public void attack(Pokemon enemy, String next) {
+    public void attack() {
         //super.attack();
         System.out.println(this.name + "이(가) 광역 전기 장판 공격을 시전합니다");
     }
@@ -23,8 +22,6 @@ public class Pikachu extends Pokemon{
 //    }
 
     public void type(){
-
         System.out.println(this.name +  " 전기 속성!");
     }
-
 }

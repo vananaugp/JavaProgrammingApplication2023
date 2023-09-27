@@ -1,13 +1,13 @@
-
 public class Charizard extends Pokemon{
     public Charizard(Flyable f) {
-        System.out.println("자몽자몽");
+        System.out.println("자몽자몽~");
         this.level = 36;
+        this.attackRate = 94;
 //      this.setLevel(36);
-        this.attackRate = 84;
         this.setHp(78);
         this.name = "리자몽";
-        this.flyable = f; // Association, Has-a (Aggregation)
+        this.defenceRate = 78;
+        this.flyable = f; // Association, has-a (Aggregation)
     }
 
     public Charizard(int level, int hp, String name) {
@@ -17,7 +17,7 @@ public class Charizard extends Pokemon{
 
 
     @Override
-    public void attack(Pokemon enemy, String next) {
+    public void attack() {
         //super.attack();
         System.out.println(this.name + "이(가) 광역 화염 공격을 시전합니다");
     }
