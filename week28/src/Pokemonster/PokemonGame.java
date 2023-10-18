@@ -69,9 +69,10 @@ public class PokemonGame {
         } catch (NullPointerException err){
             System.out.println("객체가 생성되지 않았습니다.");
             System.out.println("예외 내용 : " + err.getMessage());
-        } catch (Exception err){
-            System.out.println("예외가 발생했습니다.");
-            System.out.println("예외 내용 : " + err.getMessage());
+        }
+//        catch (Exception err){
+//            System.out.println("예외가 발생했습니다.");
+//            System.out.println("예외 내용 : " + err.getMessage());
         }finally {
             System.out.println("프로그램 종료!");
         }
